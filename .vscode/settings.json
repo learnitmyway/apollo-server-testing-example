@@ -1,0 +1,30 @@
+{
+  // formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+
+  // linting
+  "eslint.validate": ["javascript", "typescript"],
+  "javascript.validate.enable": false, // using eslint instead
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#d9d4f3",
+    "activityBar.activeBackground": "#d9d4f3",
+    "activityBar.activeBorder": "#d57b69",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#d57b69",
+    "activityBarBadge.foreground": "#15202b",
+    "titleBar.activeBackground": "#b6ade7",
+    "titleBar.inactiveBackground": "#b6ade799",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99",
+    "statusBar.background": "#b6ade7",
+    "statusBarItem.hoverBackground": "#9386db",
+    "statusBar.foreground": "#15202b",
+    "statusBar.border": "#b6ade7",
+    "titleBar.border": "#b6ade7"
+  },
+  "peacock.color": "#b6ade7"
+}
