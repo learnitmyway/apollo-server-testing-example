@@ -46,7 +46,7 @@ describe('MoviesAPI', () => {
     const moviesAPI = new MoviesAPIFake()
 
     const newMovie = {
-      title: 'Crouching Tiger',
+      title: 'Manos: The Hands of Fate',
     }
 
     const updatedMovies = [...moviesSample(), { id: 'an id', ...newMovie }]
