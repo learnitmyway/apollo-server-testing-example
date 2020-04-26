@@ -4,6 +4,7 @@ import gql from 'graphql-tag'
 import { moviesSample } from './testUtils/moviesSample'
 import MoviesAPI from './MoviesAPI'
 import { Body } from 'apollo-datasource-rest/dist/RESTDataSource'
+import { Movie } from './types'
 
 // We create a fake so we can make the methods public
 class MoviesAPIFake extends MoviesAPI {
@@ -21,7 +22,8 @@ class MoviesAPIFake extends MoviesAPI {
 describe('MoviesAPI', () => {
   it('fetches all movies', async () => {
     const moviesAPI = new MoviesAPIFake()
-    moviesAPI.get = jest.fn(() => Promise.resolve(moviesSample()))
+    const getStub = (): Promise<Movie[]> => Promise.resolve(moviesSample())
+    moviesAPI.get = jest.fn(getStub)
 
     const { query } = testServer(() => ({ moviesAPI }))
 
