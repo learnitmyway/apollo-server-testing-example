@@ -1,7 +1,5 @@
 # Apollo Server Testing Example
 
-## Article
-
 [Testing Apollo Server with Typescript](https://learnitmyway.com/apollo-server-testing/)  
 A way to test GraphQL endpoints of an Apollo Server with a RESTDataSource in Typescript.
 
