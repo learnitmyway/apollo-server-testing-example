@@ -1,10 +1,11 @@
-import testServer from './testUtils/testServer'
+import { Body } from 'apollo-datasource-rest/dist/RESTDataSource'
 import gql from 'graphql-tag'
 
-import { moviesSample } from './testUtils/moviesSample'
 import MoviesAPI from './MoviesAPI'
-import { Body } from 'apollo-datasource-rest/dist/RESTDataSource'
 import { Movie } from './types'
+
+import testServer from './testUtils/testServer'
+import { moviesSample } from './testUtils/moviesSample'
 
 // We create a fake so we can make the methods public
 class MoviesAPIFake extends MoviesAPI {
