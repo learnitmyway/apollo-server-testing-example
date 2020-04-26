@@ -3,6 +3,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.singleQuote": true,
   "prettier.semi": false,
+  "prettier.printWidth": 60,
 
   // linting
   "eslint.validate": ["javascript", "typescript"],
