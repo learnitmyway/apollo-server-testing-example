@@ -1,4 +1,8 @@
-import { Movie, CreateMovieResponse, NewMovie } from './types'
+import {
+  Movie,
+  CreateMovieResponse,
+  NewMovie,
+} from './types'
 
 const resolvers = {
   Query: {
@@ -17,7 +21,9 @@ const resolvers = {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       { dataSources }: { dataSources: any }
     ): CreateMovieResponse => {
-      const movies = dataSources.moviesAPI.createMovie(newMovie)
+      const movies = dataSources.moviesAPI.createMovie(
+        newMovie
+      )
       return {
         movies,
       }

@@ -23,7 +23,8 @@ class MoviesAPIFake extends MoviesAPI {
 describe('MoviesAPI', () => {
   it('fetches all movies', async () => {
     const moviesAPI = new MoviesAPIFake()
-    const getStub = (): Promise<Movie[]> => Promise.resolve(moviesSample())
+    const getStub = (): Promise<Movie[]> =>
+      Promise.resolve(moviesSample())
     moviesAPI.get = jest.fn(getStub)
 
     const { query } = testServer(() => ({ moviesAPI }))
@@ -52,8 +53,13 @@ describe('MoviesAPI', () => {
       title: 'Manos: The Hands of Fate',
     }
 
-    const updatedMovies = [...moviesSample(), { id: 'an id', ...newMovie }]
-    moviesAPI.post = jest.fn(() => Promise.resolve(updatedMovies))
+    const updatedMovies = [
+      ...moviesSample(),
+      { id: 'an id', ...newMovie },
+    ]
+    moviesAPI.post = jest.fn(() =>
+      Promise.resolve(updatedMovies)
+    )
 
     const { mutate } = testServer(() => ({ moviesAPI }))
 
@@ -75,7 +81,10 @@ describe('MoviesAPI', () => {
 
     // This helps us see the errors if there are any
     expect(res.errors).toBe(undefined)
-    expect(moviesAPI.post).toHaveBeenCalledWith('movies', newMovie)
+    expect(moviesAPI.post).toHaveBeenCalledWith(
+      'movies',
+      newMovie
+    )
     expect(res?.data?.createMovie).toEqual({
       movies: updatedMovies,
     })
