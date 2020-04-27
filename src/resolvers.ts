@@ -1,4 +1,9 @@
-import { ResolversContext, NewMovieInput, CreateMovieResponse } from './types'
+import {
+  ResolversContext,
+  NewMovieInput,
+  CreateMovieResponse,
+  Movie,
+} from './types'
 import { IResolvers } from 'apollo-server'
 
 const resolvers: IResolvers = {
@@ -7,7 +12,8 @@ const resolvers: IResolvers = {
       _: void,
       __: void,
       { dataSources }: ResolversContext
-    ) => dataSources.moviesAPI.getMovies(),
+    ): Promise<Movie[]> =>
+      dataSources.moviesAPI.getMovies(),
   },
   Mutation: {
     createMovie: (

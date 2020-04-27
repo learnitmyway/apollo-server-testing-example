@@ -10,7 +10,6 @@ module.exports = {
   ],
   plugins: ['@typescript-eslint', 'jest', 'import'],
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off',
     'no-console': 'warn',
     eqeqeq: 'error', // strict equals
   },
