@@ -1,30 +1,17 @@
-import { Body } from 'apollo-datasource-rest/dist/RESTDataSource'
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import gql from 'graphql-tag'
 
-import MoviesAPI from './MoviesAPI'
 import { Movie } from './types'
 
 import testServer from './testUtils/testServer'
 import { moviesSample } from './testUtils/moviesSample'
-
-// We create a fake so we can make the methods public
-class MoviesAPIFake extends MoviesAPI {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  async get(path: string): Promise<any> {
-    return super.get(path)
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  async post(path: string, body?: Body): Promise<any> {
-    return super.post(path, body)
-  }
-}
+import MoviesAPI from './MoviesAPI'
 
 describe('resolvers', () => {
   it('fetches all movies', async () => {
     // We cannot stub a protected method,
-    // so we create a fake.
-    const moviesAPI = new MoviesAPIFake()
+    // so we declare the type as 'any'
+    const moviesAPI: any = new MoviesAPI()
 
     // We create a stub because we don't
     // want to call an external service.
@@ -62,7 +49,7 @@ describe('resolvers', () => {
   })
 
   it('creates a movie', async () => {
-    const moviesAPI = new MoviesAPIFake()
+    const moviesAPI: any = new MoviesAPI()
 
     const newMovie = {
       title: 'Manos: The Hands of Fate',
