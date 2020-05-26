@@ -1,4 +1,4 @@
-import MoviesAPI from "./MoviesAPI";
+import MoviesAPI from './MoviesAPI'
 
 export interface Movie {
   id: string
@@ -17,14 +17,10 @@ export interface CreateMovieResponse {
   movies: Promise<Movie[]>
 }
 
-export interface GraphQLCustomDataSources {
-  moviesAPI: MoviesAPI;
+export interface DataSources {
+  moviesAPI: MoviesAPI
 }
 
-export interface GraphQLCustomContext {
-  credentials: null;
-}
-
-export interface ResolversContext extends GraphQLCustomContext {
-  dataSources: GraphQLCustomDataSources;
+export interface Context {
+  dataSources: DataSources
 }

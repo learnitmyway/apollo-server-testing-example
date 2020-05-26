@@ -1,5 +1,5 @@
 import {
-  ResolversContext,
+  Context,
   NewMovieInput,
   CreateMovieResponse,
   Movie,
@@ -11,7 +11,7 @@ const resolvers: IResolvers = {
     movies: (
       _: void,
       __: void,
-      { dataSources }: ResolversContext
+      { dataSources }: Context
     ): Promise<Movie[]> =>
       dataSources.moviesAPI.getMovies(),
   },
@@ -19,7 +19,7 @@ const resolvers: IResolvers = {
     createMovie: (
       _: void,
       { newMovie }: NewMovieInput,
-      { dataSources }: ResolversContext
+      { dataSources }: Context
     ): CreateMovieResponse => {
       const movies = dataSources.moviesAPI.createMovie(
         newMovie
