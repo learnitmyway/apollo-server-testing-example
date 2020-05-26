@@ -20,7 +20,7 @@ class MoviesAPIFake extends MoviesAPI {
   }
 }
 
-describe('MoviesAPI', () => {
+describe('resolvers', () => {
   it('fetches all movies', async () => {
     // We cannot stub a protected method,
     // so we create a fake.
