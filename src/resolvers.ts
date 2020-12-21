@@ -9,15 +9,15 @@ import { IResolvers } from 'apollo-server'
 const resolvers: IResolvers = {
   Query: {
     movies: (
-      _: void,
-      __: void,
+      _: unknown,
+      __: unknown,
       { dataSources }: Context
     ): Promise<Movie[]> =>
       dataSources.moviesAPI.getMovies(),
   },
   Mutation: {
     createMovie: (
-      _: void,
+      _: unknown,
       { newMovie }: NewMovieInput,
       { dataSources }: Context
     ): CreateMovieResponse => {
